@@ -13,7 +13,6 @@ from nodes import (
     patient_data_validator, 
     missing_info_handler, 
     care_recommendation_generator,
-    recommendation_finalizer,
 )
 from utils import get_user_input
 
@@ -31,7 +30,6 @@ def build_graph(State):
     graph_builder.add_node("patient_data_validator", patient_data_validator)
     graph_builder.add_node("care_recommendation_generator", care_recommendation_generator)
     graph_builder.add_node("missing_info_handler", missing_info_handler)
-    graph_builder.add_node("recommendation_finalizer", recommendation_finalizer)
     
 
     # Add edges with labels
