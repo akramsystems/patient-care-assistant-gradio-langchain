@@ -1,0 +1,6 @@
+gradio
+langgraph
+openai
+typing_extensions
+flask
+python-dotenv
