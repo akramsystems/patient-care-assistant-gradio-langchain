@@ -1,0 +1,20 @@
+services:
+  gradio-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "7860:7860"  # Expose Gradio on port 7860
+    command: ["gradio", "main.py"]  # Command to run Gradio app
+    depends_on:
+      - flask-api
+    volumes:
+      - .:/app
+
+  flask-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "5000:5000"  # Expose Flask API on port 5000
+    command: ["python3", "api/flask-app.py"]  # Command to run Flask API
